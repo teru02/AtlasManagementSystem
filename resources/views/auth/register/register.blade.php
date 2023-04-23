@@ -23,12 +23,22 @@
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
               </div>
+              @if ($errors->has('over_name'))
+                @foreach($errors->get('over_name') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+              @endif
             </div>
             <div class="" style="width:140px">
               <label class=" d-block m-0" style="font-size:13px">名</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name" name="under_name">
               </div>
+              @if ($errors->has('under_name'))
+                @foreach($errors->get('under_name') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+              @endif
             </div>
           </div>
           <div class="d-flex mt-3" style="justify-content:space-between">
@@ -37,12 +47,22 @@
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
               </div>
+              @if ($errors->has('over_name_kana'))
+                @foreach($errors->get('over_name_kana') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+              @endif
             </div>
             <div class="" style="width:140px">
               <label class="d-block m-0" style="font-size:13px">メイ</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name_kana" name="under_name_kana">
               </div>
+              @if ($errors->has('under_name_kana'))
+                @foreach($errors->get('under_name_kana') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+              @endif
             </div>
           </div>
           <div class="mt-3">
@@ -50,6 +70,11 @@
             <div class="border-bottom border-primary">
               <input type="mail" class="w-100 border-0 mail_address" name="mail_address">
             </div>
+            @if ($errors->has('mail_address'))
+              @foreach($errors->get('mail_address') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+            @endif
           </div>
         </div>
         <div class="mt-3">
@@ -59,6 +84,11 @@
           <label style="font-size:13px">女性</label>
           <input type="radio" name="sex" class="sex" value="3">
           <label style="font-size:13px">その他</label>
+          @if ($errors->has('sex'))
+            @foreach($errors->get('sex') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+          @endif
         </div>
         <div class="mt-3">
           <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
@@ -142,7 +172,27 @@
             <option value="30">30</option>
             <option value="31">31</option>
           </select>
-          <label style="font-size:13px">月</label>
+          <label style="font-size:13px">日</label>
+          @if ($errors->has('old_year'))
+            @foreach($errors->get('old_year') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
+          @if ($errors->has('old_month'))
+            @foreach($errors->get('old_month') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
+          @if ($errors->has('old_day'))
+            @foreach($errors->get('old_day') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
+          @if ($errors->has('year_month_day'))
+            @foreach($errors->get('year_month_day') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
         </div>
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">役職</label>
@@ -163,12 +213,22 @@
             <label>{{ $subject->subject }}</label>
           </div>
           @endforeach
+          @if ($errors->has('role'))
+            @foreach($errors->get('role') as $message)
+                <li> {{ $message }} </li>
+            @endforeach
+          @endif
         </div>
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">パスワード</label>
           <div class="border-bottom border-primary">
             <input type="password" class="border-0 w-100 password" name="password">
           </div>
+          @if ($errors->has('password'))
+            @foreach($errors->get('password') as $message)
+                <li> {{ $message }} </li>
+            @endforeach
+          @endif
         </div>
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px">確認用パスワード</label>
