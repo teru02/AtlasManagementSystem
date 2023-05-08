@@ -69,7 +69,8 @@ class User extends Authenticatable
     }
 
     public function subjects(){
-        return $this->belongsToMany('App\Models\Users\Subjects');// リレーションの定義
+        return $this->belongsToMany('App\Models\Users\Subjects','subject_users','user_id','subject_id');// リレーションの定義
+        // 第2・３・４引数で「Subject_usersテーブルの中の」「user_idがユーザーIDと等しいレコードの中の」「subject_idと等しいレコードに絞って」
     }
 
     // いいねしているかどうか
