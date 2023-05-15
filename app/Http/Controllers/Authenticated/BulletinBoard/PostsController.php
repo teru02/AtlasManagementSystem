@@ -56,7 +56,7 @@ class PostsController extends Controller
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
-        $post->subCategories()->sync($request->get('post_category_id',[]));
+        $post->subCategories()->attach($request->get('post_category_id',[]));
         return redirect()->route('post.show');
     }
 
