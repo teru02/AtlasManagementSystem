@@ -6,6 +6,9 @@
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
+            @foreach ($errors->all() as $error)
+                <span class="error_message">{{ $error }}</span>
+            @endforeach
           </div>
           <div>
             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
