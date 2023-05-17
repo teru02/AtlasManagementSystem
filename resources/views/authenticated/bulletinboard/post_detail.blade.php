@@ -6,7 +6,10 @@
       <div class="p-3">
         <div class="detail_inner_head">
           <div>
-            @foreach ($errors->all() as $error)
+            @foreach ($errors->get('post_title') as $error)
+                <span class="error_message">{{ $error }}</span>
+            @endforeach
+            @foreach ($errors->get('post_body') as $error)
                 <span class="error_message">{{ $error }}</span>
             @endforeach
           </div>
@@ -47,6 +50,9 @@
     <div class="comment_container border m-5">
       <div class="comment_area p-3">
         <p class="m-0">コメントする</p>
+          @foreach ($errors->get('comment') as $error)
+            <span class="error_message">{{ $error }}</span>
+          @endforeach
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
         <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
