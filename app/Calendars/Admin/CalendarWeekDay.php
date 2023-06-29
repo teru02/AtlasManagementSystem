@@ -4,6 +4,7 @@ namespace App\Calendars\Admin;
 use Carbon\Carbon;
 use App\Models\Calendars\ReserveSettings;
 
+// その日のカレンダーを出力するためのクラス
 class CalendarWeekDay{
   protected $carbon;
 

@@ -41,12 +41,13 @@ class CalendarView{
         $toDay = $this->carbon->copy()->format("Y-m-d");
 
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-          $html[] = '<td class="calendar-td">';
+          $html[] = '<td class="'.$day->pastClassName().' calendar-td">';
         }else{
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';
         }
         $html[] = $day->render();
 
+        // スクール予約した日について
         if(in_array($day->everyDay(), $day->authReserveDay())){
           $reservePart = $day->authReserveDate($day->everyDay())->first()->setting_part;
           if($reservePart == 1){
@@ -64,7 +65,11 @@ class CalendarView{
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else{
+          if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
+            $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">受付終了</p>';
+          }else{
           $html[] = $day->selectPart($day->everyDay());
+          }
         }
         $html[] = $day->getDate();
         $html[] = '</td>';
