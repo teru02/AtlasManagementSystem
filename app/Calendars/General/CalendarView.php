@@ -62,8 +62,8 @@ class CalendarView{
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'.$reservePart.'</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{
-            // 過去以外（今日以降）
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 delete-modal-open" name="delete_date" style="font-size:12px" reserve_day="{{$day}}" reserve_part="{{$reservePart}}" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+            // 過去以外（今日以降）'
+            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 delete-modal-open" name="delete_date" style="font-size:12px" reserve_day="'.$day->everyDay().'" reserve_part="'.$reservePart.'" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else{
