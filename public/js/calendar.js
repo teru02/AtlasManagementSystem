@@ -6,7 +6,9 @@ $(function () {
     var value = $(this).attr('value');
     $('.modal-inner-day').text(reserve_day);
     $('.modal-inner-part').text(reserve_part);
-    $('.edit-modal-hidden').val(value);
+    $('.modal-hidden-day').text(reserve_day);
+    $('.modal-hidden-part').text(reserve_part);
+    $('.delete-modal-hidden').val(value);
     return false;
   });
   $('.js-modal-close').on('click', function () {

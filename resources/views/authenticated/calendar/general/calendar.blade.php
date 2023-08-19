@@ -29,6 +29,9 @@
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
+          <input type="hidden" class="delete-hidden-part" name="reserve_part" value="">
+          <input type="hidden" class="delete-hidden-day" name="reserve_day" value="">
+          <input type="hidden" class="delete-modal-hidden" name="value" value="">
           <input type="submit" class="btn btn-primary d-block" value="削除">
         </div>
       </div>
