@@ -6,8 +6,8 @@ $(function () {
     var value = $(this).attr('value');
     $('.modal-inner-day').text(reserve_day);
     $('.modal-inner-part').text(reserve_part);
-    $('.modal-hidden-day').text(reserve_day);
-    $('.modal-hidden-part').text(reserve_part);
+    $('.modal-hidden-day').val(reserve_day);
+    $('.modal-hidden-part').val(reserve_part);
     $('.delete-modal-hidden').val(value);
     return false;
   });
