@@ -18,7 +18,7 @@
       <div style="text-align: center; padding-bottom:30px;">
         <img src="image/atlas-black.png" style="width:150px; ">
       </div>
-      <div class="border vh-50 w-25" style="background-color:white; border-radius:10px;  box-shadow: 0 0 8px #E0E4E7;">
+      <div class="border vh-50 w-25" style="background-color:white; border-radius:10px; box-shadow: 0 0 8px #DBE0E4;">
         <div class="w-75 m-auto pt-5">
           <label class="d-block m-0" style="font-size:13px; font-weight:bold;">メールアドレス</label>
           <div class="border-bottom border-primary w-100">
