@@ -151,6 +151,58 @@ li {
   color: red;
 }
 
+.search-content {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.search-1 {
+  max-width: 100%;
+  display: flex;
+}
+
+.search-box {
+  width: 75%;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px 0 0 5px;
+  background: #ECF1F6;
+  font-size: 13px;
+  border: solid 1px #DEE2E6;
+}
+
+.search-btn {
+  width: 25%;
+  height: 30px;
+  border-radius: 0 5px 5px 0;
+  background: #04A9D2;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+}
+
+.search-2 {
+  display: flex;
+}
+
+.like-post-btn,
+.mypost-btn {
+  border: solid 1px #DEE2E6;
+  width: 50%;
+  font-size: 13px;
+  color: #FFFFFF;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.like-post-btn {
+  background-color: #E38EAB;
+}
+
+.mypost-btn {
+  background-color: #EBBC5D;
+}
+
 /* 掲示板 詳細画面 */
 .contributor {
   font-size: 12px;
@@ -235,8 +287,10 @@ li {
 .main_categories span,
 .sub_categories li input {
   list-style: none;
+  border-bottom: solid 1px #000000;
   cursor: pointer;
 }
+
 
 /* ユーザー検索 */
 .reserve_users_area {
