@@ -203,6 +203,12 @@ li {
   background-color: #EBBC5D;
 }
 
+/* 新規投稿画面 */
+.post_create_area {
+  height: 90%;
+  min-height: 200px;
+}
+
 /* 掲示板 詳細画面 */
 .contributor {
   font-size: 12px;

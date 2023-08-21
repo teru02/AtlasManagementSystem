@@ -1,10 +1,10 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<div class="post_create_container d-flex">
+<div class="post_create_container d-flex" style="height: 100vh;">
   <div class="post_create_area border w-50 m-5 p-5">
-    <div class="">
-      <p class="mb-0">カテゴリー</p>
+    <div class="" >
+      <p class="mb-0" style="font-size:15px;">カテゴリー</p>
       <select class="w-100" form="postCreate" name="post_category_id">
         @foreach($main_categories as $main_category)
         <optgroup label="{{ $main_category->main_category }}"></optgroup>
@@ -20,15 +20,15 @@
       @if($errors->first('post_title'))
       <span class="error_message">{{ $errors->first('post_title') }}</span>
       @endif
-      <p class="mb-0">タイトル</p>
+      <p class="mb-0" style="font-size:15px;">タイトル</p>
       <input type="text" class="w-100" form="postCreate" name="post_title" value="{{ old('post_title') }}">
     </div>
-    <div class="mt-3">
+    <div class="mt-3" style="height:60%;">
       @if($errors->first('post_body'))
       <span class="error_message">{{ $errors->first('post_body') }}</span>
       @endif
-      <p class="mb-0">投稿内容</p>
-      <textarea class="w-100" form="postCreate" name="post_body">{{ old('post_body') }}</textarea>
+      <p class="mb-0" style="font-size:15px;">投稿内容</p>
+      <textarea class="w-100" style="height:90%;" form="postCreate" name="post_body">{{ old('post_body') }}</textarea>
     </div>
     <div class="mt-3 text-right">
       <input type="submit" class="btn btn-primary" value="投稿" form="postCreate">
@@ -55,7 +55,8 @@
           <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
         @endif
         <p class="m-0">サブカテゴリー</p>
-        <select type="text" class="w-100" name="main_category_id" form="subCategoryRequest">
+        <select type="text" class="w-100" name="main_category_id" form="subCategoryRequest" style="margin-bottom:2px;">
+          <option value="" selected disabled>---</option>
           @foreach($main_categories as $main_category)
             <option value="{{$main_category->id}}" form="subCategoryRequest">{{$main_category->main_category}}</option>
           @endforeach
