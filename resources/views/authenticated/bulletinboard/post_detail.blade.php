@@ -2,10 +2,9 @@
 @section('content')
 <div class="vh-100 d-flex">
   <div class="w-50 mt-5">
-    <div class="m-3 detail_container">
+    <div class="m-3 border detail_container">
       <div class="p-3">
-        <div class="detail_inner_head">
-          <div>
+          <div class="">
             @foreach ($errors->get('post_title') as $error)
                 <span class="error_message">{{ $error }}</span>
             @endforeach
@@ -13,10 +12,12 @@
                 <span class="error_message">{{ $error }}</span>
             @endforeach
           </div>
-          <div>
-            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
-            <a onclick='return confirm("本当に削除しますか？")' href="{{ route('post.delete', ['id' => $post->id]) }}">削除</a>
-          </div>
+        <div class="detail_inner_head">
+              <p class="category_btn">a</p>
+            <div>
+              <span class="btn btn-primary edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
+              <a onclick='return confirm("本当に削除しますか？")' href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger">削除</a>
+            </div>
         </div>
 
         <div class="contributor d-flex">
@@ -34,7 +35,7 @@
         <div class="comment_container">
           <span class="">コメント</span>
           @foreach($post->postComments as $comment)
-          <div class="comment_area border-top">
+          <div class="comment_area border-top pt-2">
             <p>
               <span>{{ $comment->commentUser($comment->user_id)->over_name }}</span>
               <span>{{ $comment->commentUser($comment->user_id)->under_name }}</span>さん
@@ -55,7 +56,9 @@
           @endforeach
         <textarea class="w-100" name="comment" form="commentRequest"></textarea>
         <input type="hidden" name="post_id" form="commentRequest" value="{{ $post->id }}">
-        <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿">
+        <div class="text-right">
+          <input type="submit" class="btn btn-primary" form="commentRequest" value="投稿" >
+        </div>
         <form action="{{ route('comment.create') }}" method="post" id="commentRequest">{{ csrf_field() }}</form>
       </div>
     </div>
