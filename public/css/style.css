@@ -194,6 +194,7 @@ li {
   color: #FFFFFF;
   border-radius: 5px;
   height: 30px;
+  cursor: pointer;
 }
 
 .like-post-btn {
@@ -305,21 +306,32 @@ li {
   display: flex;
   flex-wrap: wrap;
   width: 800px;
-  margin: 10px auto;
-  height: 80vh;
+  margin: auto;
+  height: 100vh;
   overflow: scroll;
   padding: 10px;
-  background: #FFF;
+  background: #ECF1F6;
   border-radius: 5px;
 }
 
 .reserve_users_area span {
   font-size: 12px;
+  font-weight: bold;
 }
 
 .one_person {
   width: 250px;
   height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #DBE0E4;
+  margin: 5px;
+  padding: 10px;
+  background-color: #FFF;
+}
+
+.search_conditions {
+  font-size: 13px;
+  border-bottom: solid 1px #000000;
 }
 
 .search_conditions span {
@@ -328,7 +340,12 @@ li {
 
 .search_conditions_inner {
   display: none;
-  background: #FFF;
+  background: #ECF1F6;
+  font-size: 13px;
+}
+
+.search_conditions_inner label {
+  padding-top: 5px;
 }
 
 .subject_edit_btn {
@@ -339,4 +356,73 @@ li {
 
 .subject_inner {
   display: none;
+}
+
+.free_word {
+  background-color: #E0E5E9;
+  border: none;
+  font-size: 13px;
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  color: #777777;
+}
+
+.search_area {
+  padding: 30px 20px 0 20px;
+}
+
+.search_area label {
+  font-size: 13px;
+  color: #4A6C89;
+}
+
+.search-element {
+  margin: 10px auto;
+}
+
+.element-add {
+  margin: 20px 0 0 10px;
+}
+
+.element-add label {
+  margin: 10px 0 5px 0;
+}
+
+.search-element select {
+  display: block;
+  background-color: #E0E5E9;
+  border: none;
+  font-size: 13px;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: #000000;
+}
+
+.element-add p {
+  position: relative;
+}
+
+.element-add p:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: #000 2px solid;
+  border-right: #000 2px solid;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position: absolute;
+  right: 2%;
+  top: 0;
+  bottom: 15%;
+  margin: auto;
+}
+
+.element-add .selected:after {
+  transform: rotate(-45deg);
 }
