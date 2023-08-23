@@ -17,7 +17,7 @@ class CalendarView{
 
   function render(){
     $html = [];
-    $html[] = '<div class="calendar text-center">';
+    $html[] = '<div class="calendar text-center" style="border:solid 1px red; height:100%;">';
     $html[] = '<table class="table">';
     $html[] = '<thead>';
     $html[] = '<tr>';
@@ -26,7 +26,7 @@ class CalendarView{
     $html[] = '<th>水</th>';
     $html[] = '<th>木</th>';
     $html[] = '<th>金</th>';
-    $html[] = '<th>土</th>';
+    $html[] = '<th style="color:red;">土</th>';
     $html[] = '<th>日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';

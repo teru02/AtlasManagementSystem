@@ -56,8 +56,15 @@ li {
   background: #EEE;
 }
 
+.table th {
+  border: solid 1.5px #E3E6EA;
+  font-size: 13px;
+}
+
 .calendar-td {
   min-width: 100px;
+  border: solid 1.5px #E3E6EA;
+
 }
 
 .day_part {
