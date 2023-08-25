@@ -57,14 +57,13 @@ li {
 }
 
 .table th {
-  border: solid 1.5px #E3E6EA;
+  border: solid 1px #dee2e6;
   font-size: 13px;
 }
 
 .calendar-td {
   min-width: 100px;
-  border: solid 1.5px #E3E6EA;
-
+  border: solid 1px #dee2e6;
 }
 
 .day_part {

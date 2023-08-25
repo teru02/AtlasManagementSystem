@@ -17,7 +17,7 @@ class CalendarView{
 
   function render(){
     $html = [];
-    $html[] = '<div class="calendar text-center" style="border:solid 1px red; height:100%;">';
+    $html[] = '<div class="calendar text-center" style="height:100%;">';
     $html[] = '<table class="table">';
     $html[] = '<thead>';
     $html[] = '<tr>';
@@ -33,7 +33,7 @@ class CalendarView{
     $html[] = '<tbody>';
     $weeks = $this->getWeeks();
     foreach($weeks as $week){
-      $html[] = '<tr class="'.$week->getClassName().'">';
+      $html[] = '<tr class="'.$week->getClassName().' ">';
 
       $days = $week->getDays();
       foreach($days as $day){
