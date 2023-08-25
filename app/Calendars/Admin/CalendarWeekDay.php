@@ -30,22 +30,15 @@ class CalendarWeekDay{
     $two_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '2')->first();
     $three_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first();
 
-    $one_part_count=$one_part->ReserveSettings->users()->count();
-    if($one_part_count=null){
-      $one_part_count=0;
-    }else{
-      $one_part_count=$one_part->users->count();
-    };
-
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部'.$one_part_count.'</p>';
+      $html[] = '<p class="day_part m-0 pt-1">1部'.$one_part->users->count().'</p>';
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1">2部'.$two_part->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1">2部'.$two_part->users->count().'</p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1">3部'.$three_part->count().'</p>';
+      $html[] = '<p class="day_part m-0 pt-1">3部'.$three_part->users->count().'</p>';
     }
     $html[] = '</div>';
 
