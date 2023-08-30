@@ -19,12 +19,10 @@
     <form action="{{ route('deleteParts') }}" method="post">
       <div class="w-100">
         <div class="w-50 m-auto">
-          <p>予約日：</p>
-          <p class="modal-inner-day w-100"></p>
+          <p>予約日：<span class="modal-inner-day w-100"></span></p>
         </div>
         <div class="w-50 m-auto pt-3 pb-3">
-          <p>部数：</p>
-          <p class="modal-inner-part"></p>
+          <p>部数：<span class="modal-inner-part"></span></p>
         </div>
         <div class="w-50 m-auto edit-modal-btn d-flex">
           <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
