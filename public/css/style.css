@@ -69,6 +69,11 @@ li {
   background: #EEE;
 }
 
+.table p {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
 .table th {
   border: solid 1px #dee2e6;
   font-size: 13px;

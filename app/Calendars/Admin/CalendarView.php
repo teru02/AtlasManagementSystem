@@ -17,16 +17,16 @@ class CalendarView{
   public function render(){
     $html = [];
     $html[] = '<div class="calendar text-center">';
-    $html[] = '<table class="table m-auto border">';
+    $html[] = '<table class="table m-auto border adjust-table">';
     $html[] = '<thead>';
     $html[] = '<tr>';
-    $html[] = '<th class="border">月</th>';
-    $html[] = '<th class="border">火</th>';
-    $html[] = '<th class="border">水</th>';
-    $html[] = '<th class="border">木</th>';
-    $html[] = '<th class="border">金</th>';
-    $html[] = '<th class="border">土</th>';
-    $html[] = '<th class="border">日</th>';
+    $html[] = '<th>月</th>';
+    $html[] = '<th >火</th>';
+    $html[] = '<th >水</th>';
+    $html[] = '<th>木</th>';
+    $html[] = '<th>金</th>';
+    $html[] = '<th>土</th>';
+    $html[] = '<th>日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';
     $html[] = '<tbody>';
@@ -45,9 +45,9 @@ class CalendarView{
         $startDay = $this->carbon->format("Y-m-01");
         $toDay = $this->carbon->format("Y-m-d");
         if($startDay <= $day->everyDay() && $toDay > $day->everyDay()){
-          $html[] = '<td class="past-day border">';
+          $html[] = '<td class="calendar-td past-day border">';
         }else{
-          $html[] = '<td class="border '.$day->getClassName().'">';
+          $html[] = '<td class="calendar-td border '.$day->getClassName().'">';
         }
         $html[] = $day->render();
         $html[] = $day->dayPartCounts($day->everyDay());
