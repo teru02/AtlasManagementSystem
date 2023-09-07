@@ -17,8 +17,8 @@ class CalendarView{
 
   function render(){
     $html = [];
-    $html[] = '<div class="calendar text-center" style="height:100%;">';
-    $html[] = '<table class="table">';
+    $html[] = '<div class="calendar text-center" >';
+    $html[] = '<table class="table m-auto border adjust-table">';
     $html[] = '<thead>';
     $html[] = '<tr>';
     $html[] = '<th>月</th>';
@@ -26,8 +26,8 @@ class CalendarView{
     $html[] = '<th>水</th>';
     $html[] = '<th>木</th>';
     $html[] = '<th>金</th>';
-    $html[] = '<th style="color:red;">土</th>';
-    $html[] = '<th>日</th>';
+    $html[] = '<th class="day-sat">土</th>';
+    $html[] = '<th class="day-sun">日</th>';
     $html[] = '</tr>';
     $html[] = '</thead>';
     $html[] = '<tbody>';
@@ -41,7 +41,7 @@ class CalendarView{
         $toDay = $this->carbon->copy()->format("Y-m-d");
 
         if($startDay <= $day->everyDay() && $toDay > $day->everyDay()){
-          $html[] = '<td class="'.$day->pastClassName().' calendar-td">';
+          $html[] = '<td class="'.$day->pastClassName().'">';
         }else{
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';
         }
@@ -63,7 +63,7 @@ class CalendarView{
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }else{
             // 過去以外（今日以降）'
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 delete-modal-open" name="delete_date" style="font-size:12px" reserve_day="'.$day->everyDay().'" reserve_part="'.$reservePart.'" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75 mb-1 delete-modal-open" name="delete_date" style="font-size:12px" reserve_day="'.$day->everyDay().'" reserve_part="'.$reservePart.'" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
           }
         }else{
