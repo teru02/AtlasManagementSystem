@@ -35,9 +35,11 @@ li {
 }
 
 /* トップページ */
-.user_status {
+.user_status,
+.reserve_detail_box {
   border-radius: 10px;
   background: #FFF;
+  box-shadow: 0 0 10px #DBE0E4;
 }
 
 /* 新規ユーザー登録 */
@@ -96,6 +98,33 @@ li {
 
 .adjust-table-btn {
   width: 70%;
+}
+
+.reserve_detail_box {
+  min-height: 300px;
+  padding: 5px;
+}
+
+.reserve_detail_table {
+  width: 100%;
+}
+
+.reserve_detail_table th {
+  background: #03AAD2;
+  color: #eee;
+  height: 30px;
+  padding-left: 30px;
+}
+
+.reserve_detail_table td {
+  background: #fff;
+  height: 30px;
+  padding-left: 30px;
+}
+
+.reserve_detail_table tr:nth-child(odd) td {
+  background: #E5F6FA;
+  height: 30px;
 }
 
 /* モーダル */
@@ -487,10 +516,6 @@ li {
 }
 
 /* ユーザープロフィール */
-.user_status {
-  box-shadow: 0 0 10px #DBE0E4;
-}
-
 .profile-acd span:after {
   content: "";
   display: inline-block;
