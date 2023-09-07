@@ -12,87 +12,108 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Oswald:wght@200&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
-<body class="all_content">
+<body class="all_content" style="font-size:13px;">
   <form action="{{ route('registerPost') }}" method="POST">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center;">
-      <div class="w-25 vh-75 border p-3" style="background-color:white; border-radius:10px; box-shadow: 0 0 8px #E0E4E7; height:400px;">
+      <div class=" vh-75 border p-3" style="background-color:white; border-radius:10px; box-shadow: 0 0 8px #E0E4E7;">
         <div class="register_form">
           <div class="d-flex mt-3" style="justify-content:space-between;">
             <div class="m-auto" style="width:140px;">
-              <label class="d-block m-0" style="font-size:13px; font-weight:bold;">姓</label>
-              <div class="border-bottom border-primary" style="width:140px;">
-                <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
-              </div>
-              @if ($errors->has('over_name'))
+            @if ($errors->has('over_name'))
                 @foreach($errors->get('over_name') as $message)
                 <li> {{ $message }} </li>
                 @endforeach
               @endif
+              @if ($errors->has('under_name'))
+                @foreach($errors->get('under_name') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+              @endif
+              <label class="d-block m-0" style="font-size:13px; font-weight:bold;">姓</label>
+              <div class="border-bottom border-primary" style="width:140px;">
+                <input type="text" style="width:140px;" class="border-0 over_name" name="over_name">
+              </div>
             </div>
             <div class="m-auto" style="width:140px">
               <label class=" d-block m-0" style="font-size:13px; font-weight:bold;">名</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name" name="under_name">
               </div>
-              @if ($errors->has('under_name'))
-                @foreach($errors->get('under_name') as $message)
-                <li> {{ $message }} </li>
-                @endforeach
-              @endif
+
             </div>
           </div>
           <div class="d-flex mt-3" style="justify-content:space-between">
             <div class="m-auto" style="width:140px">
-              <label class="d-block m-0" style="font-size:13px; font-weight:bold;">セイ</label>
-              <div class="border-bottom border-primary" style="width:140px;">
-                <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
-              </div>
-              @if ($errors->has('over_name_kana'))
+             @if ($errors->has('over_name_kana'))
                 @foreach($errors->get('over_name_kana') as $message)
                 <li> {{ $message }} </li>
                 @endforeach
               @endif
+              @if ($errors->has('under_name_kana'))
+                @foreach($errors->get('under_name_kana') as $message)
+                <li> {{ $message }} </li>
+                @endforeach
+              @endif
+              <label class="d-block m-0" style="font-size:13px; font-weight:bold;">セイ</label>
+              <div class="border-bottom border-primary" style="width:140px;">
+                <input type="text" style="width:140px;" class="border-0 over_name_kana" name="over_name_kana">
+              </div>
             </div>
             <div class="m-auto" style="width:140px">
               <label class="d-block m-0" style="font-size:13px; font-weight:bold;">メイ</label>
               <div class="border-bottom border-primary" style="width:140px;">
                 <input type="text" style="width:140px;" class="border-0 under_name_kana" name="under_name_kana">
               </div>
-              @if ($errors->has('under_name_kana'))
-                @foreach($errors->get('under_name_kana') as $message)
-                <li> {{ $message }} </li>
-                @endforeach
-              @endif
             </div>
           </div>
           <div class="mt-3">
-            <label class="m-0 d-block" style="font-size:13px; font-weight:bold;">メールアドレス</label>
-            <div class="border-bottom border-primary">
-              <input type="mail" class="w-100 border-0 mail_address" name="mail_address">
-            </div>
             @if ($errors->has('mail_address'))
               @foreach($errors->get('mail_address') as $message)
                 <li> {{ $message }} </li>
                 @endforeach
             @endif
+            <label class="m-0 d-block" style="font-size:13px; font-weight:bold;">メールアドレス</label>
+            <div class="border-bottom border-primary">
+              <input type="mail" class="w-100 border-0 mail_address" name="mail_address">
+            </div>
           </div>
         </div>
         <div class="mt-3">
-          <input type="radio" name="sex" class="sex" value="1">
-          <label style="font-size:13px; font-weight:bold;">男性</label>
-          <input type="radio" name="sex" class="sex" value="2">
-          <label style="font-size:13px; font-weight:bold;">女性</label>
-          <input type="radio" name="sex" class="sex" value="3">
-          <label style="font-size:13px; font-weight:bold;">その他</label>
-          @if ($errors->has('sex'))
+        @if ($errors->has('sex'))
             @foreach($errors->get('sex') as $message)
                 <li> {{ $message }} </li>
                 @endforeach
           @endif
+            <label style="font-size:13px; font-weight:bold; width:30%; text-align:center;"><input type="radio" name="sex" class="sex" value="1">
+            男性</label>
+            <label style="font-size:13px; font-weight:bold; width:30%; text-align:center;"><input type="radio" name="sex" class="sex" value="2">
+            女性</label>
+            <label style="font-size:13px; font-weight:bold; width:30%; text-align:center;"><input type="radio" name="sex" class="sex" value="3">
+            その他</label>
         </div>
         <div class="mt-3">
+          @if ($errors->has('old_year'))
+            @foreach($errors->get('old_year') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
+          @if ($errors->has('old_month'))
+            @foreach($errors->get('old_month') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
+          @if ($errors->has('old_day'))
+            @foreach($errors->get('old_day') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
+          @if ($errors->has('year_month_day'))
+            @foreach($errors->get('year_month_day') as $message)
+              <li> {{ $message }} </li>
+            @endforeach
+          @endif
           <label class="d-block m-0 aa" style="font-size:13px; font-weight:bold;">生年月日</label>
-          <select class="old_year" name="old_year">
+          <select class="old_year" name="old_year" style="width:25%;">
             <option value="none">-----</option>
             <option value="1985">1985</option>
             <option value="1986">1986</option>
@@ -122,7 +143,7 @@
             <option value="2010">2010</option>
           </select>
           <label style="font-size:13px; font-weight:bold;">年</label>
-          <select class="old_month" name="old_month">
+          <select class="old_month" name="old_month" style="width:25%;">
             <option value="none">-----</option>
             <option value="01">1</option>
             <option value="02">2</option>
@@ -138,7 +159,7 @@
             <option value="12">12</option>
           </select>
           <label style="font-size:13px; font-weight:bold;">月</label>
-          <select class="old_day" name="old_day">
+          <select class="old_day" name="old_day" style="width:25%;">
             <option value="none">-----</option>
             <option value="01">1</option>
             <option value="02">2</option>
@@ -173,51 +194,32 @@
             <option value="31">31</option>
           </select>
           <label style="font-size:13px; font-weight:bold;">日</label>
-          @if ($errors->has('old_year'))
-            @foreach($errors->get('old_year') as $message)
-              <li> {{ $message }} </li>
-            @endforeach
-          @endif
-          @if ($errors->has('old_month'))
-            @foreach($errors->get('old_month') as $message)
-              <li> {{ $message }} </li>
-            @endforeach
-          @endif
-          @if ($errors->has('old_day'))
-            @foreach($errors->get('old_day') as $message)
-              <li> {{ $message }} </li>
-            @endforeach
-          @endif
-          @if ($errors->has('year_month_day'))
-            @foreach($errors->get('year_month_day') as $message)
-              <li> {{ $message }} </li>
-            @endforeach
-          @endif
         </div>
         <div class="mt-3">
-          <label class="d-block m-0" style="font-size:13px; font-weight:bold;">役職</label>
-          <input type="radio" name="role" class="admin_role role" value="1">
-          <label style="font-size:13px; font-weight:bold;">教師(国語)</label>
-          <input type="radio" name="role" class="admin_role role" value="2">
-          <label style="font-size:13px; font-weight:bold;">教師(数学)</label>
-          <input type="radio" name="role" class="admin_role role" value="3">
-          <label style="font-size:13px; font-weight:bold;">教師(英語)</label>
-          <input type="radio" name="role" class="other_role role" value="4">
-          <label style="font-size:13px; font-weight:bold;" class="other_role">生徒</label>
-        </div>
-        <div class="select_teacher d-none">
-          <label class="d-block m-0" style="font-size:13px; font-weight:bold;">選択科目</label>
-          @foreach($subjects as $subject)
-          <div class="">
-            <input type="checkbox" name="subject[]" value="{{ $subject->id }}">
-            <label>{{ $subject->subject }}</label>
-          </div>
-          @endforeach
+
           @if ($errors->has('role'))
             @foreach($errors->get('role') as $message)
                 <li> {{ $message }} </li>
             @endforeach
           @endif
+          <label class="d-block m-0" style="font-size:13px; font-weight:bold;">役職</label>
+          <input type="radio" name="role" class="admin_role role" value="1">
+          <label style="font-size:13px; font-weight:bold; padding-right:5px;">教師(国語)</label>
+          <input type="radio" name="role" class="admin_role role" value="2">
+          <label style="font-size:13px; font-weight:bold; padding-right:5px;">教師(数学)</label>
+          <input type="radio" name="role" class="admin_role role" value="3">
+          <label style="font-size:13px; font-weight:bold; padding-right:5px;">教師(英語)</label>
+          <input type="radio" name="role" class="other_role role" value="4">
+          <label style="font-size:13px; font-weight:bold; padding-right:5px;" class="other_role">生徒</label>
+        </div>
+        <div class="select_teacher d-none">
+          <label class="d-block m-0" style="font-size:13px; font-weight:bold;">選択科目</label>
+          @foreach($subjects as $subject)
+          <div class="" style="display:inline-block;">
+            <input type="checkbox" name="subject[]" value="{{ $subject->id }}">
+            <label>{{ $subject->subject }}</label>
+          </div>
+          @endforeach
         </div>
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px;font-weight:bold;">パスワード</label>
@@ -236,7 +238,7 @@
             <input type="password" class="border-0 w-100 password_confirmation" name="password">
           </div>
         </div>
-        <div class="mt-5 text-right">
+        <div class="mt-1 text-right">
           <input type="submit" class="btn btn-primary register_btn" disabled value="新規登録" onclick="return confirm('登録してよろしいですか？')">
         </div>
         <div class="text-center">

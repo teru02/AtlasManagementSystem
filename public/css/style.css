@@ -19,6 +19,7 @@ li {
 /* サイドバー */
 .sidebar {
   width: 180px;
+  min-width: 100px;
   height: 100vh;
   background-color: #03AAD2;
   font-weight: bold;
@@ -38,6 +39,16 @@ li {
   border-radius: 10px;
   background: #FFF;
 }
+
+/* 新規ユーザー登録 */
+.old_year,
+.old_month,
+.old_day {
+  border: none;
+  border-bottom: solid 1px #0000FF;
+}
+
+
 
 /* スクール予約関連 */
 .day-blank {
