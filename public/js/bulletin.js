@@ -1,5 +1,6 @@
 $(function () {
   $('.main_categories').click(function () {
+    $(this).toggleClass('selected');
     var category_id = $(this).attr('category_id');
     $('.category_num' + category_id).slideToggle();
   });
