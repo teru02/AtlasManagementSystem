@@ -13,7 +13,7 @@
             @endforeach
           </div>
         <div class="detail_inner_head">
-              <p class="category_btn">a</p>
+              <p class="category_btn">{{ $post->subCategories->implode('sub_category') }}</p>
             <div>
               <span class="btn btn-primary edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}" post_id="{{ $post->id }}">編集</span>
               <a onclick='return confirm("本当に削除しますか？")' href="{{ route('post.delete', ['id' => $post->id]) }}" class="btn btn-danger">削除</a>
