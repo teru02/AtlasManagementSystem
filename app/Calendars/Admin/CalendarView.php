@@ -21,8 +21,8 @@ class CalendarView{
     $html[] = '<thead>';
     $html[] = '<tr>';
     $html[] = '<th>月</th>';
-    $html[] = '<th >火</th>';
-    $html[] = '<th >水</th>';
+    $html[] = '<th>火</th>';
+    $html[] = '<th>水</th>';
     $html[] = '<th>木</th>';
     $html[] = '<th>金</th>';
     $html[] = '<th>土</th>';
@@ -42,8 +42,8 @@ class CalendarView{
       $days = $week->getDays();
       // 日カレンダーオブジェクトをループさせながらクラス名を出力し<td>の中に日カレンダーを出力
       foreach($days as $day){
-        $startDay = $this->carbon->format("Y-m-01");
-        $toDay = $this->carbon->format("Y-m-d");
+        $startDay = $this->carbon->copy()->format("Y-m-01");
+        $toDay = $this->carbon->copy()->format("Y-m-d");
         if($startDay <= $day->everyDay() && $toDay > $day->everyDay()){
           $html[] = '<td class="calendar-td past-day border">';
         }else{
