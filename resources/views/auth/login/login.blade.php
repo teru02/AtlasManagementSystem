@@ -16,7 +16,7 @@
   <form action="{{ route('loginPost') }}" method="POST">
     <div class="w-100 vh-100 d-flex" style="align-items:center; justify-content:center; flex-flow: column;">
       <div style="text-align: center; padding-bottom:30px;">
-        <img src="image/atlas-black.png" style="width:150px; ">
+        <img src="{{ asset('image/atlas-black.png') }}" style="width:150px; ">
       </div>
       <div class="border vh-50 w-25" style="background-color:white; border-radius:10px; box-shadow: 0 0 8px #DBE0E4;">
         <div class="w-75 m-auto pt-5">

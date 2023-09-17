@@ -235,7 +235,7 @@
         <div class="mt-3">
           <label class="d-block m-0" style="font-size:13px; font-weight:bold;">確認用パスワード</label>
           <div class="border-bottom border-primary">
-            <input type="password" class="border-0 w-100 password_confirmation" name="password">
+            <input type="password" class="border-0 w-100 password_confirmation" name="password_confirmation">
           </div>
         </div>
         <div class="mt-1 text-right">
