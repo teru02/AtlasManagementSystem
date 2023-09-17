@@ -11,6 +11,7 @@
           <th class="w-25">名前</th>
           <th class="w-25">場所</th>
         </tr>
+        @if(!empty($reservePersons->users))
           @foreach($reservePersons->users as $persons)
           <tr class="text-left">
             <td class="w-25">{{$persons->id}}</td>
@@ -18,6 +19,7 @@
             <td>リモート</td>
           </tr>
           @endforeach
+          @endif
       </table>
     </div>
   </div>
