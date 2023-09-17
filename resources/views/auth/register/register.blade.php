@@ -21,12 +21,12 @@
             <div class="m-auto" style="width:140px;">
             @if ($errors->has('over_name'))
                 @foreach($errors->get('over_name') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
                 @endforeach
               @endif
               @if ($errors->has('under_name'))
                 @foreach($errors->get('under_name') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
                 @endforeach
               @endif
               <label class="d-block m-0" style="font-size:13px; font-weight:bold;">姓</label>
@@ -46,12 +46,12 @@
             <div class="m-auto" style="width:140px">
              @if ($errors->has('over_name_kana'))
                 @foreach($errors->get('over_name_kana') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
                 @endforeach
               @endif
               @if ($errors->has('under_name_kana'))
                 @foreach($errors->get('under_name_kana') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
                 @endforeach
               @endif
               <label class="d-block m-0" style="font-size:13px; font-weight:bold;">セイ</label>
@@ -69,7 +69,7 @@
           <div class="mt-3">
             @if ($errors->has('mail_address'))
               @foreach($errors->get('mail_address') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
                 @endforeach
             @endif
             <label class="m-0 d-block" style="font-size:13px; font-weight:bold;">メールアドレス</label>
@@ -81,7 +81,7 @@
         <div class="mt-3">
         @if ($errors->has('sex'))
             @foreach($errors->get('sex') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
                 @endforeach
           @endif
             <label style="font-size:13px; font-weight:bold; width:30%; text-align:center;"><input type="radio" name="sex" class="sex" value="1">
@@ -94,22 +94,22 @@
         <div class="mt-3">
           @if ($errors->has('old_year'))
             @foreach($errors->get('old_year') as $message)
-              <li> {{ $message }} </li>
+              <li class="error_message"> {{ $message }} </li>
             @endforeach
           @endif
           @if ($errors->has('old_month'))
             @foreach($errors->get('old_month') as $message)
-              <li> {{ $message }} </li>
+              <li class="error_message"> {{ $message }} </li>
             @endforeach
           @endif
           @if ($errors->has('old_day'))
             @foreach($errors->get('old_day') as $message)
-              <li> {{ $message }} </li>
+              <li class="error_message"> {{ $message }} </li>
             @endforeach
           @endif
           @if ($errors->has('year_month_day'))
             @foreach($errors->get('year_month_day') as $message)
-              <li> {{ $message }} </li>
+              <li class="error_message"> {{ $message }} </li>
             @endforeach
           @endif
           <label class="d-block m-0 aa" style="font-size:13px; font-weight:bold;">生年月日</label>
@@ -199,7 +199,7 @@
 
           @if ($errors->has('role'))
             @foreach($errors->get('role') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
             @endforeach
           @endif
           <label class="d-block m-0" style="font-size:13px; font-weight:bold;">役職</label>
@@ -228,7 +228,7 @@
           </div>
           @if ($errors->has('password'))
             @foreach($errors->get('password') as $message)
-                <li> {{ $message }} </li>
+                <li class="error_message"> {{ $message }} </li>
             @endforeach
           @endif
         </div>
