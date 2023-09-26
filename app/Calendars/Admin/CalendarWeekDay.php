@@ -33,20 +33,20 @@ class CalendarWeekDay{
 
     $html[] = '<div class="text-center" >';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'.Auth::id().'/'.$ymd.'/1">1部</a>'.$one_part->users->count().'</p>';
+      $html[] = '<p class="day_part m-0 "><a href="/calendar/'.Auth::id().'/'.$ymd.'/1">1部</a>'.$one_part->users->count().'</p>';
     }else{
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'.Auth::id().'/'.$ymd.'/1">1部</a>0</p>';
+      $html[] = '<p class="day_part m-0 "><a href="/calendar/'.Auth::id().'/'.$ymd.'/1">1部</a>0</p>';
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'.Auth::id().'/'.$ymd.'/2">2部</a>'.$two_part->users->count().'</p>';
+      $html[] = '<p class="day_part m-0 "><a href="/calendar/'.Auth::id().'/'.$ymd.'/2">2部</a>'.$two_part->users->count().'</p>';
     }
     else{
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'.Auth::id().'/'.$ymd.'/2">2部</a>0</p>';
+      $html[] = '<p class="day_part m-0 "><a href="/calendar/'.Auth::id().'/'.$ymd.'/2">2部</a>0</p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'.Auth::id().'/'.$ymd.'/3">3部</a>'.$three_part->users->count().'</p>';
+      $html[] = '<p class="day_part m-0 "><a href="/calendar/'.Auth::id().'/'.$ymd.'/3">3部</a>'.$three_part->users->count().'</p>';
     }else{
-      $html[] = '<p class="day_part m-0 pt-1"><a href="/calendar/'.Auth::id().'/'.$ymd.'/3">3部</a>0</p>';
+      $html[] = '<p class="day_part m-0 "><a href="/calendar/'.Auth::id().'/'.$ymd.'/3">3部</a>0</p>';
     }
     $html[] = '</div>';
 
