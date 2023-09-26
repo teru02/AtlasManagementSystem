@@ -14,7 +14,7 @@
         @if(!empty($reservePersons->users))
           @foreach($reservePersons->users as $persons)
           <tr class="text-left">
-            <th class="w-25">{{$persons->id}}</th>
+            <td class="w-25">{{$persons->id}}</td>
             <td class="w-25"><span>{{$persons->over_name}}</span><span>{{$persons->under_name}}</span></td>
             <td>リモート</td>
           </tr>
